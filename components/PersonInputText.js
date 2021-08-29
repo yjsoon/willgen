@@ -1,6 +1,12 @@
-const PersonBlock = ({ description, keyName, person, setPerson }) => {
+const PersonInputText = ({
+  description,
+  keyName,
+  person,
+  setPerson,
+  placeholder,
+}) => {
   return (
-    <label className="block">
+    <label className="block mt-8">
       <span className="text-gray-700">{description}</span>
       <input
         type="text"
@@ -8,9 +14,10 @@ const PersonBlock = ({ description, keyName, person, setPerson }) => {
         className="mt-1 block w-full"
         value={person.name}
         onChange={(e) => setPerson({ ...person, [keyName]: e.target.value })}
+        placeholder={placeholder}
       />
     </label>
   );
 };
 
-export default PersonBlock;
+export default PersonInputText;
