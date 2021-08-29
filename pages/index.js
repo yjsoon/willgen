@@ -1,8 +1,10 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
+import PersonBlock from "../components/PersonBlock";
 
 export default function Home() {
   const [page, setPage] = useState(1);
+  const [author, setAuthor] = useState({});
 
   const nextPage = async (event) => {
     event.preventDefault();
@@ -10,18 +12,22 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="antialiased text-gray-900 px-6">
       <Head>
         <title>Will Generator</title>
       </Head>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+      <main className="max-w-xl mx-auto py-12 divide-y md:mx-w-4xl">
         <h1 className="text-6xl font-bold">Will Generator</h1>
-        <section className="p-10 bg-gray-100 m-4">
+        <section className="py-8">
           <form onSubmit={nextPage}>
             {page == 1 && (
               <>
-                <label htmlFor={"name"}>Name</label>
-                <input type="text" id={"name"} />
+                <PersonBlock
+                  description="Full Name"
+                  person={author}
+                  keyName="name"
+                  setPerson={setAuthor}
+                />
               </>
             )}
 
