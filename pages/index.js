@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import PersonInputText from "../components/PersonInputText";
 
 export default function Home() {
-  const [page, setPage] = useState(1);
   const [author, setAuthor] = useState({});
 
   return (
@@ -31,7 +30,7 @@ export default function Home() {
           </section>
           <br />
           <button className="p-4 rounded bg-blue-100 border-red-400 mt-4 w-48">
-            Submit
+            Next
           </button>
         </form>
       </main>
