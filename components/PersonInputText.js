@@ -12,7 +12,7 @@ const PersonInputText = ({
         type="text"
         id={keyName}
         className="mt-1 block w-full"
-        value={person.name}
+        value={person[keyName]}
         onChange={(e) => setPerson({ ...person, [keyName]: e.target.value })}
         placeholder={placeholder}
       />

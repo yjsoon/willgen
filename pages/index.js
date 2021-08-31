@@ -1,9 +1,15 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import PersonInputText from "../components/PersonInputText";
+import { AppContext, useAppContext } from "../contexts/AppContext";
 
 export default function Home() {
-  const [author, setAuthor] = useState({});
+  // const [author, setAuthor] = useState({});
+  const { author, setAuthor } = useAppContext();
+
+  const nextPage = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="antialiased text-gray-900 px-6">
