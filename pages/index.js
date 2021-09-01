@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useAppContext } from "../contexts/AppContext";
 
 import PersonAdder from "../components/PersonAdder";
-import PersonAddress from "../components/PersonAddress";
 import NavButtons from "../components/NavButtons";
 
 export default function Home() {
@@ -28,9 +27,6 @@ export default function Home() {
         setPerson={setAuthor}
         description="Full Name"
       />
-      <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start">
-        <PersonAddress person={author} setPerson={setAuthor} />
-      </section>
       <NavButtons next="page2" />
     </>
   );

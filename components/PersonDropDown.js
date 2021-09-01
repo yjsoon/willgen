@@ -6,7 +6,7 @@ const PersonDropDown = ({
   values,
 }) => {
   return (
-    <label className="block mt-8" htmlFor="idType">
+    <label className="block  mb-4" htmlFor="idType">
       <span className="text-gray-700">{description}</span>
       <select
         className="form-select block w-full mt-2"

@@ -6,7 +6,7 @@ const PersonInputText = ({
   placeholder,
 }) => {
   return (
-    <label className="block mt-8" htmlFor={keyName}>
+    <label className="block  mb-4" htmlFor={keyName}>
       <span className="text-gray-700">{description}</span>
       <input
         type="text"

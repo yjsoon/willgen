@@ -1,7 +1,7 @@
 const PersonGenderRadio = ({ person, setPerson }) => {
   return (
     <label
-      className="block mt-8"
+      className="block mb-4"
       htmlFor="gender"
       onChange={(e) => setPerson({ ...person, gender: e.target.value })}
     >

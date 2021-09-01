@@ -3,7 +3,7 @@ import PersonDropDown from "./PersonDropDown";
 
 const PersonAddress = ({ person, setPerson }) => {
   return (
-    <label className="block mt-8" htmlFor="Address">
+    <label className="block my-4" htmlFor="Address">
       <span className="text-gray-700">Address</span>
       <input
         type="text"
