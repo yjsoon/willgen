@@ -1,17 +1,7 @@
 import { createContext, useState, useContext } from "react";
+import { personTemplate } from "../constants/personTemplate";
 
 export const AppContext = createContext();
-
-export const personTemplate = {
-  name: "Banana",
-  gender: "",
-  idType: "",
-  id: "",
-  address1: "",
-  address2: "",
-  country: "",
-  postal: "",
-};
 
 const AppContextProvider = ({ children }) => {
   const [author, setAuthor] = useState({ ...personTemplate });

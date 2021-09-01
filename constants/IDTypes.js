@@ -1,4 +1,4 @@
-export const IDTypes = [
+export const idTypes = [
   "",
   "NRIC (Pink)",
   "NRIC (Blue)",

@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import PersonInputText from "../components/PersonInputText";
 import { useAppContext } from "../contexts/AppContext";
 import PersonGenderRadio from "../components/PersonGenderRadio";
-import { IDTypes } from "../constants/IDTypes";
 import PersonDropDown from "../components/PersonDropDown";
+import { idTypes } from "../constants/idTypes";
+import { citizenshipCountries } from "../constants/citizenshipCountries";
 
 export default function Home() {
   const { author, setAuthor } = useAppContext();
@@ -38,7 +39,7 @@ export default function Home() {
               person={author}
               setPerson={setAuthor}
               keyName="idType"
-              values={IDTypes}
+              values={idTypes}
             />
             <PersonInputText
               description="NRIC/Passport/ID No."
@@ -47,7 +48,15 @@ export default function Home() {
               setPerson={setAuthor}
               placeholder="e.g. S1122334C"
             />
+            <PersonDropDown
+              description="Citizenship"
+              person={author}
+              setPerson={setAuthor}
+              keyName="citizenship"
+              values={citizenshipCountries}
+            />
           </section>
+          <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start"></section>
           <br />
           <button className="p-4 rounded bg-blue-100 border-red-400 mt-4 w-48">
             Next
