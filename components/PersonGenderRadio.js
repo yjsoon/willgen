@@ -3,7 +3,7 @@ const PersonGenderRadio = ({ person, setPerson }) => {
     <label
       className="block mt-8"
       htmlFor="gender"
-      onChange={(e) => ({ ...person, gender: e.target.value })}
+      onChange={(e) => setPerson({ ...person, gender: e.target.value })}
     >
       <span className="text-gray-700 block mb-2">Gender</span>
       <span className="inline-flex items-center">
