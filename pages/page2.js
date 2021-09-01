@@ -14,6 +14,10 @@ const Page2 = () => {
     setExecutors([executor]);
   };
 
+  useEffect(() => {
+    console.log(executors);
+  }, [executors]);
+
   return (
     <>
       <Head>
