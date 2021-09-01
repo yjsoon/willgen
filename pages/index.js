@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import PersonInputText from "../components/PersonInputText";
 import { useAppContext } from "../contexts/AppContext";
 import PersonGenderRadio from "../components/PersonGenderRadio";
+import { IDTypes } from "../constants/IDTypes";
+import PersonDropDown from "../components/PersonDropDown";
 
 export default function Home() {
   const { author, setAuthor } = useAppContext();
@@ -18,7 +20,7 @@ export default function Home() {
   return (
     <div className="antialiased text-gray-900 px-6">
       <Head>
-        <title>Will Generator</title>
+        <title>Will Generator - Page 1</title>
       </Head>
       <main className="max-w-xl mx-auto py-12 divide-y md:mx-w-4xl">
         <h1 className="text-6xl font-bold">Will Generator</h1>
@@ -31,6 +33,13 @@ export default function Home() {
               setPerson={setAuthor}
             />
             <PersonGenderRadio person={author} setPerson={setAuthor} />
+            <PersonDropDown
+              description="ID Type"
+              person={author}
+              setPerson={setAuthor}
+              keyName="idType"
+              values={IDTypes}
+            />
             <PersonInputText
               description="NRIC/Passport/ID No."
               person={author}
