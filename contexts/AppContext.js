@@ -9,7 +9,7 @@ const AppContextProvider = ({ children }) => {
   const [beneficiaries, setBeneficaries] = useState([{ ...personTemplate }]);
 
   return (
-    <AppContext.Provider value={{ author, setAuthor }}>
+    <AppContext.Provider value={{ author, setAuthor, executors, setExecutors }}>
       {children}
     </AppContext.Provider>
   );
