@@ -9,7 +9,7 @@ const PersonDropDown = ({
     <label className="block mt-8" htmlFor="idType">
       <span className="text-gray-700">{description}</span>
       <select
-        class="form-select block w-full mt-1"
+        className="form-select block w-full mt-2"
         value={person[keyName]}
         onChange={(e) => setPerson({ ...person, [keyName]: e.target.value })}
       >

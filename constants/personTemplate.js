@@ -3,6 +3,7 @@ export const personTemplate = {
   gender: "",
   idType: "",
   id: "",
+  citizenship: "",
   address1: "",
   address2: "",
   country: "",

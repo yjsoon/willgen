@@ -11,7 +11,7 @@ const PersonInputText = ({
       <input
         type="text"
         name={keyName}
-        className="mt-1 block w-full"
+        className="mt-2 block w-full"
         value={person[keyName]}
         onChange={(e) => setPerson({ ...person, [keyName]: e.target.value })}
         placeholder={placeholder}

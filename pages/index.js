@@ -5,7 +5,8 @@ import { useAppContext } from "../contexts/AppContext";
 import PersonGenderRadio from "../components/PersonGenderRadio";
 import PersonDropDown from "../components/PersonDropDown";
 import { idTypes } from "../constants/idTypes";
-import { citizenshipCountries } from "../constants/citizenshipCountries";
+import { countries } from "../constants/countries";
+import PersonAddress from "../components/PersonAddress";
 
 export default function Home() {
   const { author, setAuthor } = useAppContext();
@@ -15,7 +16,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    console.log({ author });
+    console.log(author);
   }, [author]);
 
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <Head>
         <title>Will Generator - Page 1</title>
       </Head>
-      <main className="max-w-xl mx-auto py-12 divide-y md:mx-w-4xl">
+      <main className="max-w-4xl mx-auto py-12 divide-y md:mx-w-4xl">
         <h1 className="text-6xl font-bold">Will Generator</h1>
         <form onSubmit={nextPage}>
           <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start">
@@ -53,10 +54,12 @@ export default function Home() {
               person={author}
               setPerson={setAuthor}
               keyName="citizenship"
-              values={citizenshipCountries}
+              values={countries}
             />
           </section>
-          <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start"></section>
+          <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start">
+            <PersonAddress person={author} setPerson={setAuthor} />
+          </section>
           <br />
           <button className="p-4 rounded bg-blue-100 border-red-400 mt-4 w-48">
             Next

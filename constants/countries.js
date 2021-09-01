@@ -1,4 +1,4 @@
-export const citizenshipCountries = [
+export const countries = [
   "",
   "Singapore",
   "Malaysia",
