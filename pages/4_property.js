@@ -10,7 +10,7 @@ import FieldDropDown from "../components/FieldDropDown";
 import useArrayManager from "../components/useArrayManager";
 
 const Page4 = () => {
-  const { properties, setProperties } = useAppContext();
+  const { beneficiaries, properties, setProperties } = useAppContext();
   const [setProperty, addProperty, removeProperty] = useArrayManager(
     properties,
     setProperties
@@ -48,13 +48,29 @@ const Page4 = () => {
                 setObject={(property) => setProperty(property, index)}
                 description="Beneficiary"
                 keyName="beneficiary"
-                values={["a", "b"]}
+                values={["", ...beneficiaries.map((ben) => ben.name)]}
               />
             </section>
           </div>
+          {
+            // don't display remove for the first person
+            index != 0 && (
+              <button
+                className="p-4 rounded bg-red-100 mb-5"
+                onClick={() => removeProperty(1)}
+              >
+                ❌ Remove property 🔼
+              </button>
+            )
+          }
         </div>
       ))}
-
+      <button
+        className="p-4 rounded bg-green-100 block"
+        onClick={() => addProperty({ ...propertyTemplate })}
+      >
+        ➕ Add property
+      </button>
       <NavButtons prev="/2_executors" next="4_property" />
     </>
   );
