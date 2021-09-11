@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 export const personTemplate = {
   name: "Banana",
   gender: "",
@@ -10,5 +8,4 @@ export const personTemplate = {
   address2: "",
   country: "",
   postal: "",
-  id: uuidv4(),
 };
