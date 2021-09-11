@@ -10,7 +10,7 @@ import useArrayManager from "../components/useArrayManager";
 import FieldInputText from "../components/FieldInputText";
 import { assetCategories } from "../constants/assetCategories";
 
-const Page5 = () => {
+const Page8 = () => {
   const { assets, setAssets } = useAppContext();
   const [setAsset, addAsset, removeAsset] = useArrayManager(assets, setAssets);
 
@@ -93,9 +93,9 @@ const Page5 = () => {
       >
         ➕ Add asset
       </button>
-      <NavButtons prev="4_property" next="6_distribute" />
+      <NavButtons prev="7_funeral" next="9_instructions" />
     </>
   );
 };
 
-export default Page5;
+export default Page8;
