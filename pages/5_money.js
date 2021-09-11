@@ -65,7 +65,7 @@ const Page5 = () => {
         className="p-4 rounded bg-green-100 block"
         onClick={() => addMoney({ money: "", beneficiary: "" })}
       >
-        ➕ Add property
+        ➕ Add sum of money
       </button>
       <NavButtons prev="4_property" next="6_distribute" />
     </>

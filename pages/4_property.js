@@ -54,7 +54,7 @@ const Page4 = () => {
           </div>
           {
             // don't display remove for the first person
-            properties.length > 0 && (
+            properties.length > 1 && (
               <button
                 className="absolute w-min bottom-4 right-4"
                 onClick={() => removeProperty(index)}

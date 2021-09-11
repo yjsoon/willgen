@@ -37,7 +37,7 @@ const Page3 = () => {
           />
           {
             // don't display remove for the first person
-            beneficiaries.length > 0 && (
+            beneficiaries.length > 1 && (
               <button
                 className="absolute w-min bottom-4 right-4"
                 onClick={() => removeBeneficiary(index)}
