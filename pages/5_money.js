@@ -9,7 +9,7 @@ import FieldDropDown from "../components/FieldDropDown";
 import useArrayManager from "../components/useArrayManager";
 import FieldInputText from "../components/FieldInputText";
 
-const Page4 = () => {
+const Page5 = () => {
   const { beneficiaries, moneys, setMoneys } = useAppContext();
   const [setMoney, addMoney, removeMoney] = useArrayManager(moneys, setMoneys);
 
@@ -67,9 +67,9 @@ const Page4 = () => {
       >
         ➕ Add property
       </button>
-      <NavButtons prev="/4_property" next="6_distribute" />
+      <NavButtons prev="4_property" next="6_distribute" />
     </>
   );
 };
 
-export default Page4;
+export default Page5;
