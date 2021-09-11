@@ -1,0 +1,74 @@
+import Head from "next/head";
+
+import { useEffect } from "react";
+import { useAppContext } from "../contexts/AppContext";
+
+import NavButtons from "../components/NavButtons";
+import { propertyTemplate } from "../constants/propertyTemplate";
+import FieldDropDown from "../components/FieldDropDown";
+import useArrayManager from "../components/useArrayManager";
+import FieldInputText from "../components/FieldInputText";
+
+const Page4 = () => {
+  const { beneficiaries, moneys, setMoneys } = useAppContext();
+  const [setMoney, addMoney, removeMoney] = useArrayManager(moneys, setMoneys);
+
+  useEffect(() => {
+    console.table(moneys);
+  }, [moneys]);
+
+  return (
+    <>
+      <Head>
+        <title>5 — Sum of money</title>
+      </Head>
+      <h2 className="text-3xl font-bold mb-5 text-gray-500">Sum of money</h2>
+      <p>
+        A “sum of money” here refers to a fixed amount of money that you wish to
+        allocate to your beneficiaries.
+      </p>
+
+      {moneys.map((money, index) => (
+        <div key={index}>
+          <div className="rounded divide-y divide-gray-300 bg-gray-100 px-8 py-8 my-4">
+            <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start mb-4">
+              <FieldInputText
+                object={money}
+                setObject={(money) => setMoney(money, index)}
+                description="Money in SGD"
+                keyName="money"
+              />
+              <FieldDropDown
+                object={money}
+                setObject={(money) => setMoney(money, index)}
+                description="Beneficiary"
+                keyName="beneficiary"
+                values={["", ...beneficiaries.map((ben) => ben.name)]}
+              />
+            </section>
+          </div>
+          {
+            // don't display remove for the first person
+            index != 0 && (
+              <button
+                className="p-4 rounded bg-red-100 mb-5"
+                onClick={() => removeMoney(index)}
+              >
+                ❌ Remove sum of money 🔼
+              </button>
+            )
+          }
+        </div>
+      ))}
+      <button
+        className="p-4 rounded bg-green-100 block"
+        onClick={() => addMoney({ money: "", beneficiary: "" })}
+      >
+        ➕ Add property
+      </button>
+      <NavButtons prev="/4_property" next="6_distribute" />
+    </>
+  );
+};
+
+export default Page4;
