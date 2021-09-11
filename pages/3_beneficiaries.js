@@ -7,48 +7,49 @@ import PersonAdder from "../components/PersonAdder";
 import NavButtons from "../components/NavButtons";
 import { personTemplate } from "../constants/personTemplate";
 
-const Page2 = () => {
-  const { executors, setExecutors } = useAppContext();
-  let mainExecutor = executors[0];
-  let setMainExecutor = (executor) => setExecutors([executor, altExecutor]);
-  let altExecutor = executors[1];
-  let setAltExecutor = (executor) => setExecutors([mainExecutor, executor]);
+const Page3 = () => {
+  const { beneficiaries, setBeneficiaries } = useAppContext();
+  let addBeneficiary = (beneficiary) =>
+    setBeneficiaries([...beneficiaries, beneficiary]);
+  let removeBeneficiary = (index) => {
+    let newBeneficiaries = [...beneficiaries]; // thanks copilot
+    newBeneficiaries.splice(index, 1);
+    setBeneficiaries(newBeneficiaries);
+  };
 
   useEffect(() => {
-    console.log(executors);
-  }, [executors]);
+    console.log(`There are ${beneficiaries.length} beneficiaries.`);
+    console.log(beneficiaries);
+  }, [beneficiaries]);
 
   return (
     <>
       <Head>
-        <title>Will Generator - Page 3</title>
+        <title>3 — Beneficiaries</title>
       </Head>
       <h2 className="text-3xl font-bold mb-5 text-gray-500">Beneficiaries</h2>
       <PersonAdder
-        person={mainExecutor}
-        setPerson={setMainExecutor}
-        description="Full Name of Main Executor"
+        person={beneficiaries[0]}
+        setPerson={() => {}}
+        description="Full Name of Beneficiary"
       />
-      {executors[1] == null && (
+      {beneficiaries[1] == null && (
         <button
           className="p-4 rounded bg-green-100"
-          onClick={() => setAltExecutor({ ...personTemplate })}
+          onClick={() => addBeneficiary({ ...personTemplate })}
         >
-          + Add alternative executor
+          ➕ Add beneficiary
         </button>
       )}
-      {executors[1] && (
+      {beneficiaries[1] && (
         <>
           <PersonAdder
-            person={altExecutor}
-            setPerson={setAltExecutor}
-            description="Full Name of Main Executor"
+            person={beneficiaries[1]}
+            setPerson={() => {}}
+            description="Full Name of Beneficiary"
           />
-          <button
-            className="p-4 rounded bg-red-100"
-            onClick={() => setAltExecutor(null)}
-          >
-            Remove alternative executor
+          <button className="p-4 rounded bg-red-100" onClick={() => {}}>
+            ❌ Remove beneficiary 🔼
           </button>
         </>
       )}
@@ -57,4 +58,4 @@ const Page2 = () => {
   );
 };
 
-export default Page2;
+export default Page3;

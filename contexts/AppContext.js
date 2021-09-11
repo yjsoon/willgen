@@ -6,10 +6,19 @@ export const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
   const [author, setAuthor] = useState({ ...personTemplate });
   const [executors, setExecutors] = useState([{ ...personTemplate }]);
-  const [beneficiaries, setBeneficaries] = useState([{ ...personTemplate }]);
+  const [beneficiaries, setBeneficiaries] = useState([{ ...personTemplate }]);
 
   return (
-    <AppContext.Provider value={{ author, setAuthor, executors, setExecutors }}>
+    <AppContext.Provider
+      value={{
+        author,
+        setAuthor,
+        executors,
+        setExecutors,
+        beneficiaries,
+        setBeneficiaries,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
