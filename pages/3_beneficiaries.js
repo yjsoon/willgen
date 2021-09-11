@@ -26,7 +26,6 @@ const Page3 = () => {
   };
 
   useEffect(() => {
-    console.log(`${beneficiaries.length} beneficiaries.`);
     console.table(beneficiaries);
   }, [beneficiaries]);
 

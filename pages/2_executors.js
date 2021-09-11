@@ -15,7 +15,7 @@ const Page2 = () => {
   let setAltExecutor = (executor) => setExecutors([mainExecutor, executor]);
 
   useEffect(() => {
-    console.log(executors);
+    console.table(executors);
   }, [executors]);
 
   return (

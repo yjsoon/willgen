@@ -27,7 +27,7 @@ const PersonAdder = ({ person, setPerson, description }) => {
         <PersonInputText
           description="NRIC/Passport/ID No."
           person={person}
-          keyName="id"
+          keyName="identification"
           setPerson={setPerson}
           placeholder="e.g. S1122334C"
         />

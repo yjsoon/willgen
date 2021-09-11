@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    console.log(author);
+    console.table(author);
   }, [author]);
 
   return (

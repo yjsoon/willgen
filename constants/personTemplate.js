@@ -1,8 +1,10 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const personTemplate = {
   name: "Banana",
   gender: "",
   idType: "",
-  id: "",
+  identification: "",
   citizenship: "",
   address1: "",
   address2: "",
