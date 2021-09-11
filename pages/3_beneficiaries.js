@@ -37,7 +37,7 @@ const Page3 = () => {
       <h2 className="text-3xl font-bold mb-5 text-gray-500">Beneficiaries</h2>
 
       {beneficiaries.map((beneficiary, index) => (
-        <>
+        <div key={index}>
           <PersonAdder
             person={beneficiary}
             setPerson={(beneficiary) => setBeneficiary(beneficiary, index)}
@@ -54,7 +54,7 @@ const Page3 = () => {
               </button>
             )
           }
-        </>
+        </div>
       ))}
       <button
         className="p-4 rounded bg-green-100 block"

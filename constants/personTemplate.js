@@ -10,4 +10,5 @@ export const personTemplate = {
   address2: "",
   country: "",
   postal: "",
+  id: uuidv4(),
 };
