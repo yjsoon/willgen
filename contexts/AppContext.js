@@ -19,6 +19,9 @@ const AppContextProvider = ({ children }) => {
   const [moneys, setMoneys] = useLocalStorage("sumOfMoney", [
     { money: "", beneficiary: "" },
   ]);
+  const [assets, setAssets] = useLocalStorage("assets", [
+    { name: "", category: "", value: "", description: "" },
+  ]);
 
   return (
     <AppContext.Provider
@@ -33,6 +36,8 @@ const AppContextProvider = ({ children }) => {
         setProperties,
         moneys,
         setMoneys,
+        assets,
+        setAssets,
       }}
     >
       {children}
