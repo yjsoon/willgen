@@ -27,7 +27,7 @@ const Page3 = () => {
       <h2 className="text-3xl font-bold mb-5 text-gray-500">Beneficiaries</h2>
 
       {beneficiaries.map((beneficiary, index) => (
-        <div key={index}>
+        <div key={index} className="relative">
           <PersonAdder
             person={beneficiary}
             setPerson={(beneficiary) => setBeneficiary(beneficiary, index)}
@@ -37,12 +37,12 @@ const Page3 = () => {
           />
           {
             // don't display remove for the first person
-            index != 0 && (
+            beneficiaries.length > 0 && (
               <button
-                className="p-4 rounded bg-red-100 mb-5"
+                className="absolute w-min bottom-4 right-4"
                 onClick={() => removeBeneficiary(index)}
               >
-                ❌ Remove beneficiary 🔼
+                🗑️
               </button>
             )
           }

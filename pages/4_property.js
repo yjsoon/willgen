@@ -36,7 +36,7 @@ const Page4 = () => {
       </p>
 
       {properties.map((property, index) => (
-        <div key={index}>
+        <div key={index} className="relative">
           <div className="rounded divide-y divide-gray-300 bg-gray-100 px-8 py-8 my-4">
             <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start mb-4">
               <FieldAddress
@@ -54,12 +54,12 @@ const Page4 = () => {
           </div>
           {
             // don't display remove for the first person
-            index != 0 && (
+            properties.length > 0 && (
               <button
-                className="p-4 rounded bg-red-100 mb-5"
+                className="absolute w-min bottom-4 right-4"
                 onClick={() => removeProperty(index)}
               >
-                ❌ Remove property 🔼
+                🗑️
               </button>
             )
           }
