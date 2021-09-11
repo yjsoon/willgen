@@ -9,8 +9,16 @@ import { personTemplate } from "../constants/personTemplate";
 
 const Page3 = () => {
   const { beneficiaries, setBeneficiaries } = useAppContext();
+
+  let setBeneficiary = (beneficiary, index) => {
+    let newBeneficiaries = [...beneficiaries];
+    newBeneficiaries[index] = beneficiary;
+    setBeneficiaries(newBeneficiaries);
+  };
+
   let addBeneficiary = (beneficiary) =>
     setBeneficiaries([...beneficiaries, beneficiary]);
+
   let removeBeneficiary = (index) => {
     let newBeneficiaries = [...beneficiaries]; // thanks copilot
     newBeneficiaries.splice(index, 1);
@@ -18,8 +26,8 @@ const Page3 = () => {
   };
 
   useEffect(() => {
-    console.log(`There are ${beneficiaries.length} beneficiaries.`);
-    console.log(beneficiaries);
+    console.log(`${beneficiaries.length} beneficiaries.`);
+    console.table(beneficiaries);
   }, [beneficiaries]);
 
   return (
@@ -28,32 +36,34 @@ const Page3 = () => {
         <title>3 — Beneficiaries</title>
       </Head>
       <h2 className="text-3xl font-bold mb-5 text-gray-500">Beneficiaries</h2>
-      <PersonAdder
-        person={beneficiaries[0]}
-        setPerson={() => {}}
-        description="Full Name of Beneficiary"
-      />
-      {beneficiaries[1] == null && (
-        <button
-          className="p-4 rounded bg-green-100"
-          onClick={() => addBeneficiary({ ...personTemplate })}
-        >
-          ➕ Add beneficiary
-        </button>
-      )}
-      {beneficiaries[1] && (
+
+      {beneficiaries.map((beneficiary, index) => (
         <>
           <PersonAdder
-            person={beneficiaries[1]}
-            setPerson={() => {}}
+            person={beneficiary}
+            setPerson={(beneficiary) => setBeneficiary(beneficiary, index)}
             description="Full Name of Beneficiary"
           />
-          <button className="p-4 rounded bg-red-100" onClick={() => {}}>
-            ❌ Remove beneficiary 🔼
-          </button>
+          {
+            // don't display remove for the first person
+            index != 0 && (
+              <button
+                className="p-4 rounded bg-red-100 mb-5"
+                onClick={() => removeBeneficiary(1)}
+              >
+                ❌ Remove beneficiary 🔼
+              </button>
+            )
+          }
         </>
-      )}
-      <NavButtons prev="/" next="page3" />
+      ))}
+      <button
+        className="p-4 rounded bg-green-100 block"
+        onClick={() => addBeneficiary({ ...personTemplate })}
+      >
+        ➕ Add beneficiary
+      </button>
+      <NavButtons prev="/" next="4_guardian" />
     </>
   );
 };
