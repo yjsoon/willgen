@@ -1,5 +1,5 @@
 export const personTemplate = {
-  name: "Banana",
+  name: "",
   gender: "",
   idType: "",
   identification: "",
