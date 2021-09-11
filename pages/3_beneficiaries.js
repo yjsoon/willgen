@@ -6,24 +6,14 @@ import { useAppContext } from "../contexts/AppContext";
 import PersonAdder from "../components/PersonAdder";
 import NavButtons from "../components/NavButtons";
 import { personTemplate } from "../constants/personTemplate";
+import useArrayManager from "../components/useArrayManager";
 
 const Page3 = () => {
   const { beneficiaries, setBeneficiaries } = useAppContext();
-
-  let setBeneficiary = (beneficiary, index) => {
-    let newBeneficiaries = [...beneficiaries];
-    newBeneficiaries[index] = beneficiary;
-    setBeneficiaries(newBeneficiaries);
-  };
-
-  let addBeneficiary = (beneficiary) =>
-    setBeneficiaries([...beneficiaries, beneficiary]);
-
-  let removeBeneficiary = (index) => {
-    let newBeneficiaries = [...beneficiaries]; // thanks copilot
-    newBeneficiaries.splice(index, 1);
-    setBeneficiaries(newBeneficiaries);
-  };
+  const [setBeneficiary, addBeneficiary, removeBeneficiary] = useArrayManager(
+    beneficiaries,
+    setBeneficiaries
+  );
 
   useEffect(() => {
     console.table(beneficiaries);

@@ -1,6 +1,7 @@
 import { createContext, useState, useContext } from "react";
 import useLocalStorage from "use-local-storage";
 import { personTemplate } from "../constants/personTemplate";
+import { propertyTemplate } from "../constants/propertyTemplate";
 
 export const AppContext = createContext();
 
@@ -12,6 +13,9 @@ const AppContextProvider = ({ children }) => {
   const [beneficiaries, setBeneficiaries] = useLocalStorage("beneficiaries", [
     { ...personTemplate },
   ]);
+  const [properties, setProperties] = useLocalStorage("properties", [
+    { ...propertyTemplate },
+  ]);
 
   return (
     <AppContext.Provider
@@ -22,6 +26,8 @@ const AppContextProvider = ({ children }) => {
         setExecutors,
         beneficiaries,
         setBeneficiaries,
+        properties,
+        setProperties,
       }}
     >
       {children}

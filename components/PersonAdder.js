@@ -63,7 +63,7 @@ const PersonAdder = ({
           values={countries}
         />
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start">
+      <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start pt-4">
         <FieldAddress object={person} setObject={setPerson} />
       </section>
     </div>

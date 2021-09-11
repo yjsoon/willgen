@@ -1,9 +1,8 @@
 import { countries } from "../constants/countries";
-import FieldDropDown from "./FieldDropDown";
 
 const FieldAddress = ({ object, setObject }) => {
   return (
-    <label className="block my-4" htmlFor="Address">
+    <label className="block mb-4" htmlFor="Address">
       <span className="text-gray-700">Address</span>
       <input
         type="text"
