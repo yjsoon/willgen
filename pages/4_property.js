@@ -57,7 +57,7 @@ const Page4 = () => {
             index != 0 && (
               <button
                 className="p-4 rounded bg-red-100 mb-5"
-                onClick={() => removeProperty(1)}
+                onClick={() => removeProperty(index)}
               >
                 ❌ Remove property 🔼
               </button>
@@ -71,7 +71,7 @@ const Page4 = () => {
       >
         ➕ Add property
       </button>
-      <NavButtons prev="/2_executors" next="4_property" />
+      <NavButtons prev="/3_beneficiaries" next="5_money" />
     </>
   );
 };

@@ -40,7 +40,7 @@ const Page3 = () => {
             index != 0 && (
               <button
                 className="p-4 rounded bg-red-100 mb-5"
-                onClick={() => removeBeneficiary(1)}
+                onClick={() => removeBeneficiary(index)}
               >
                 ❌ Remove beneficiary 🔼
               </button>
