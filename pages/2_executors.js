@@ -28,6 +28,7 @@ const Page2 = () => {
         person={mainExecutor}
         setPerson={setMainExecutor}
         description="Full Name of Main Executor"
+        showGender={false}
       />
       {executors[1] == null && (
         <button

@@ -6,7 +6,7 @@ import PersonAddress from "../components/PersonAddress";
 import { idTypes } from "../constants/idTypes";
 import { countries } from "../constants/countries";
 
-const PersonAdder = ({ person, setPerson, description }) => {
+const PersonAdder = ({ person, setPerson, description, showGender = true }) => {
   return (
     <div className="rounded divide-y divide-gray-300 bg-gray-100 px-8 py-8 my-4">
       <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start mb-4">
@@ -16,7 +16,11 @@ const PersonAdder = ({ person, setPerson, description }) => {
           keyName="name"
           setPerson={setPerson}
         />
-        <PersonGenderRadio person={person} setPerson={setPerson} />
+        {showGender ? (
+          <PersonGenderRadio person={person} setPerson={setPerson} />
+        ) : (
+          <div className="block mb-4"></div>
+        )}
         <PersonDropDown
           description="ID Type"
           person={person}
