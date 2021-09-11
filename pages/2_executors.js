@@ -39,19 +39,19 @@ const Page2 = () => {
         </button>
       )}
       {executors[1] && (
-        <>
+        <div className="relative">
           <PersonAdder
             person={altExecutor}
             setPerson={setAltExecutor}
             description="Full Name of Alternative Executor"
           />
           <button
-            className="p-4 rounded bg-red-100"
+            className="absolute w-min bottom-4 right-4"
             onClick={() => setAltExecutor(null)}
           >
-            ❌ Remove alternative executor 🔼
+            🗑️
           </button>
-        </>
+        </div>
       )}
       <NavButtons prev="/1_about" next="3_beneficiaries" />
     </>
