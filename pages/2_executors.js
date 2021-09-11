@@ -21,7 +21,7 @@ const Page2 = () => {
   return (
     <>
       <Head>
-        <title>Will Generator - Page 2</title>
+        <title>2 – Executors</title>
       </Head>
       <h2 className="text-3xl font-bold mb-5 text-gray-500">Executors</h2>
       <PersonAdder
