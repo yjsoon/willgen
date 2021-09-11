@@ -64,7 +64,7 @@ const Page3 = () => {
       >
         ➕ Add beneficiary
       </button>
-      <NavButtons prev="/2_executors" next="4_guardian" />
+      <NavButtons prev="/2_executors" next="4_property" />
     </>
   );
 };

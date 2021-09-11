@@ -1,8 +1,8 @@
-const PersonInputText = ({
+const FieldInputText = ({
   description,
   keyName,
-  person,
-  setPerson,
+  object,
+  setObject,
   placeholder,
 }) => {
   return (
@@ -12,12 +12,12 @@ const PersonInputText = ({
         type="text"
         name={keyName}
         className="mt-2 block w-full"
-        value={person[keyName]}
-        onChange={(e) => setPerson({ ...person, [keyName]: e.target.value })}
+        value={object[keyName]}
+        onChange={(e) => setObject({ ...object, [keyName]: e.target.value })}
         placeholder={placeholder}
       />
     </label>
   );
 };
 
-export default PersonInputText;
+export default FieldInputText;

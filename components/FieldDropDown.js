@@ -1,17 +1,11 @@
-const PersonDropDown = ({
-  description,
-  person,
-  setPerson,
-  keyName,
-  values,
-}) => {
+const FieldDropDown = ({ description, object, setObject, keyName, values }) => {
   return (
     <label className="block  mb-4" htmlFor="idType">
       <span className="text-gray-700">{description}</span>
       <select
         className="form-select block w-full mt-2"
-        value={person[keyName]}
-        onChange={(e) => setPerson({ ...person, [keyName]: e.target.value })}
+        value={object[keyName]}
+        onChange={(e) => setObject({ ...object, [keyName]: e.target.value })}
       >
         {values.map((type) => (
           <option key={type} value={type}>
@@ -23,4 +17,4 @@ const PersonDropDown = ({
   );
 };
 
-export default PersonDropDown;
+export default FieldDropDown;

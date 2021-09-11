@@ -1,7 +1,7 @@
-import PersonInputText from "../components/PersonInputText";
-import PersonGenderRadio from "../components/PersonGenderRadio";
-import PersonDropDown from "../components/PersonDropDown";
-import PersonAddress from "../components/PersonAddress";
+import FieldInputText from "./FieldInputText";
+import FieldRadio from "./FieldRadio";
+import FieldDropDown from "./FieldDropDown";
+import FieldAddress from "./FieldAddress";
 
 import { idTypes } from "../constants/idTypes";
 import { countries } from "../constants/countries";
@@ -17,49 +17,54 @@ const PersonAdder = ({
   return (
     <div className="rounded divide-y divide-gray-300 bg-gray-100 px-8 py-8 my-4">
       <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start mb-4">
-        <PersonInputText
+        <FieldInputText
           description={description}
-          person={person}
+          object={person}
           keyName="name"
-          setPerson={setPerson}
+          setObject={setPerson}
         />
         {showGender ? (
-          <PersonGenderRadio person={person} setPerson={setPerson} />
+          <FieldRadio
+            object={person}
+            setObject={setPerson}
+            option1="Male"
+            option2="Female"
+          />
         ) : showRelationship ? (
-          <PersonDropDown
+          <FieldDropDown
             description="Relationship"
-            person={person}
-            setPerson={setPerson}
+            object={person}
+            setObject={setPerson}
             keyName="relationship"
             values={relationships}
           />
         ) : (
           <div className="block mb-4"></div>
         )}
-        <PersonDropDown
+        <FieldDropDown
           description="ID Type"
-          person={person}
-          setPerson={setPerson}
+          object={person}
+          setObject={setPerson}
           keyName="idType"
           values={idTypes}
         />
-        <PersonInputText
+        <FieldInputText
           description="NRIC/Passport/ID No."
-          person={person}
+          object={person}
+          setObject={setPerson}
           keyName="identification"
-          setPerson={setPerson}
           placeholder="e.g. S1122334C"
         />
-        <PersonDropDown
+        <FieldDropDown
           description="Citizenship"
-          person={person}
-          setPerson={setPerson}
+          object={person}
+          setObject={setPerson}
           keyName="citizenship"
           values={countries}
         />
       </section>
       <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start">
-        <PersonAddress person={person} setPerson={setPerson} />
+        <FieldAddress object={person} setObject={setPerson} />
       </section>
     </div>
   );
