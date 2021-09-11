@@ -23,6 +23,7 @@ const Page2 = () => {
       <Head>
         <title>Will Generator - Page 2</title>
       </Head>
+      <h2 className="text-3xl font-bold mb-5 text-gray-500">Executors</h2>
       <PersonAdder
         person={mainExecutor}
         setPerson={setMainExecutor}
@@ -33,7 +34,7 @@ const Page2 = () => {
           className="p-4 rounded bg-green-100"
           onClick={() => setAltExecutor({ ...personTemplate })}
         >
-          + Add alternative executor
+          ➕ Add alternative executor
         </button>
       )}
       {executors[1] && (
@@ -41,17 +42,17 @@ const Page2 = () => {
           <PersonAdder
             person={altExecutor}
             setPerson={setAltExecutor}
-            description="Full Name of Main Executor"
+            description="Full Name of Alternative Executor"
           />
           <button
             className="p-4 rounded bg-red-100"
             onClick={() => setAltExecutor(null)}
           >
-            Remove alternative executor
+            ❌ Remove alternative executor 🔼
           </button>
         </>
       )}
-      <NavButtons prev="/" next="page3" />
+      <NavButtons prev="/" next="3_beneficiaries" />
     </>
   );
 };

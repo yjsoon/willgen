@@ -20,9 +20,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Will Generator</title>
+        <title>1 - About</title>
       </Head>
-      <NavButtons next="1_about" />
+      <h2 className="text-3xl font-bold mb-5 text-gray-500">About you</h2>
+      <PersonAdder
+        person={author}
+        setPerson={setAuthor}
+        description="Full Name"
+      />
+      <NavButtons next="2_executors" />
     </>
   );
 }
