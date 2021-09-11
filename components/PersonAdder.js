@@ -3,7 +3,7 @@ import FieldRadio from "./FieldRadio";
 import FieldDropDown from "./FieldDropDown";
 import FieldAddress from "./FieldAddress";
 
-import { idTypes } from "../constants/idTypes";
+import { idTypes } from "../constants/identityTypes";
 import { countries } from "../constants/countries";
 import { relationships } from "../constants/relationships";
 
