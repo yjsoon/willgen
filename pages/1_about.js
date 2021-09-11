@@ -28,7 +28,7 @@ export default function Home() {
         setPerson={setAuthor}
         description="Full Name"
       />
-      <NavButtons next="2_executors" />
+      <NavButtons prev="/" next="2_executors" />
     </>
   );
 }

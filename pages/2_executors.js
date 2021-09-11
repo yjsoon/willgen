@@ -52,7 +52,7 @@ const Page2 = () => {
           </button>
         </>
       )}
-      <NavButtons prev="/" next="3_beneficiaries" />
+      <NavButtons prev="/1_about" next="3_beneficiaries" />
     </>
   );
 };
