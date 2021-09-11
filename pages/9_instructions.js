@@ -51,7 +51,7 @@ const Page9 = () => {
           />
         </label>
       </div>
-      <NavButtons prev="8_assets" next="10_done" />
+      <NavButtons prev="8_assets" next="10_review" />
     </>
   );
 };
