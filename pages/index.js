@@ -9,14 +9,6 @@ import NavButtons from "../components/NavButtons";
 export default function Home() {
   const { author, setAuthor } = useAppContext();
 
-  const nextPage = (e) => {
-    e.preventDefault();
-  };
-
-  useEffect(() => {
-    console.log(author);
-  }, [author]);
-
   return (
     <>
       <Head>
