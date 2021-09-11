@@ -8,4 +8,5 @@ export const personTemplate = {
   address2: "",
   country: "",
   postal: "",
+  relationship: "",
 };

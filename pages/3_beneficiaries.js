@@ -42,6 +42,8 @@ const Page3 = () => {
             person={beneficiary}
             setPerson={(beneficiary) => setBeneficiary(beneficiary, index)}
             description="Full Name of Beneficiary"
+            showGender={false}
+            showRelationship={true}
           />
           {
             // don't display remove for the first person
