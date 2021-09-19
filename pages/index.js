@@ -21,8 +21,8 @@ export default function Home() {
         place.
       </p>
       <h2>Things to note before you begin.</h2>
-      <div className="info grid-cols-3 grid gap-4 px-4 bg-gray-100">
-        <section className="bg-gray-50 my-4 p-4">
+      <div className="info grid-cols-3 md:grid gap-4">
+        <section className="bg-gray-100 my-4 p-4">
           <h3>1. You will need the following information</h3>
           <h4>Mandatory</h4>
           <ul>
@@ -37,7 +37,7 @@ export default function Home() {
             </li>
           </ul>
         </section>
-        <section className="bg-gray-50 my-4 p-4">
+        <section className="bg-gray-100 my-4 p-4">
           <h3>2. Start only when you can finish</h3>
           <p>
             This session should take less than 10 minutes to complete if all the
@@ -49,7 +49,7 @@ export default function Home() {
             have everything you need to complete the process.
           </p>
         </section>
-        <section className="bg-gray-50 my-4 p-4">
+        <section className="bg-gray-100 my-4 p-4">
           <h3>3. The Will is only valid once it has been endorsed</h3>
           <p>
             This online template produces a pdf that you need to print and sign.
