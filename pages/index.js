@@ -50,7 +50,7 @@ export default function Home() {
           </p>
         </section>
         <section>
-          <h3>The Will is only valid once it has been endorsed</h3>
+          <h3>3. The Will is only valid once it has been endorsed</h3>
           <p>
             This online template produces a pdf that you need to print and sign.
             It will only be valid once it has been signed by you and two
