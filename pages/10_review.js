@@ -6,9 +6,10 @@ import { useAppContext } from "../contexts/AppContext";
 import NavButtons from "../components/NavButtons";
 import Link from "next/link";
 import TitleWithEdit from "../components/TitleWithEdit";
+import PersonDisplay from "../components/PersonDisplay";
 
 const Page10 = () => {
-  const { author, setAuthor } = useAppContext();
+  const { author, executors } = useAppContext();
   useEffect(() => {
     console.table(author);
   }, [author]);
@@ -29,41 +30,12 @@ const Page10 = () => {
       </p>
 
       <TitleWithEdit title="Personal Details" link="/1_about" />
-      <section className="rounded bg-gray-100 px-8 py-8 my-4 grid grid-cols-2">
-        <div className="block mb-4">
-          <span className="font-bold text-lg text-gray-700">Name</span>
-          <p>{author.name}</p>
-        </div>
-        <div className="block mb-4">
-          <span className="font-bold text-lg text-gray-700">Gender</span>
-          <p>{author.gender}</p>
-        </div>
-        <div className="block mb-4">
-          <span className="font-bold text-lg text-gray-700">Type of ID</span>
-          <p>{author.idType}</p>
-        </div>
-        <div className="block mb-4">
-          <span className="font-bold text-lg text-gray-700">
-            NRIC/Passport/ID No.
-          </span>
-          <p>{author.identification}</p>
-        </div>
-        <div className="block mb-4">
-          <span className="font-bold text-lg text-gray-700">Citizenship</span>
-          <p>{author.citizenship}</p>
-        </div>
-        <div />
-        <div className="block mb-4">
-          <span className="font-bold text-lg text-gray-700">Address</span>
-          <p>{author.address1}</p>
-          <p>{author.address2}</p>
-          <p>
-            {author.country} {author.postal}
-          </p>
-        </div>
-      </section>
+      <PersonDisplay person={author} />
 
       <TitleWithEdit title="Executors" link="/2_executors" />
+      {executors.map((executor) => (
+        <PersonDisplay person={executor} key={executor.id} showGender={false} />
+      ))}
 
       <TitleWithEdit
         title="Beneficiaries and asset allocation"

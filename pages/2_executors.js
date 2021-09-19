@@ -44,6 +44,7 @@ const Page2 = () => {
             person={altExecutor}
             setPerson={setAltExecutor}
             description="Full Name of Alternative Executor"
+            showGender={false}
           />
           <button
             className="absolute w-min bottom-4 right-4"
