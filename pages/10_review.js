@@ -4,11 +4,8 @@ import { useEffect } from "react";
 import { useAppContext } from "../contexts/AppContext";
 
 import NavButtons from "../components/NavButtons";
-import { propertyTemplate } from "../constants/propertyTemplate";
-import FieldDropDown from "../components/FieldDropDown";
-import useArrayManager from "../components/useArrayManager";
-import FieldInputText from "../components/FieldInputText";
-import { assetCategories } from "../constants/assetCategories";
+import Link from "next/link";
+import TitleWithEdit from "../components/TitleWithEdit";
 
 const Page10 = () => {
   const { author, setAuthor } = useAppContext();
@@ -31,12 +28,62 @@ const Page10 = () => {
         to make changes to your Will.
       </p>
 
-      <div className="rounded bg-gray-100 px-8 py-8 my-4">
-        <label className="block mb-4" htmlFor="description">
+      <TitleWithEdit title="Personal Details" link="/1_about" />
+      <section className="rounded bg-gray-100 px-8 py-8 my-4 grid grid-cols-2">
+        <div className="block mb-4">
+          <span className="font-bold text-lg text-gray-700">Name</span>
+          <p>{author.name}</p>
+        </div>
+        <div className="block mb-4">
+          <span className="font-bold text-lg text-gray-700">Gender</span>
+          <p>{author.gender}</p>
+        </div>
+        <div className="block mb-4">
+          <span className="font-bold text-lg text-gray-700">Type of ID</span>
+          <p>{author.idType}</p>
+        </div>
+        <div className="block mb-4">
+          <span className="font-bold text-lg text-gray-700">
+            NRIC/Passport/ID No.
+          </span>
+          <p>{author.identification}</p>
+        </div>
+        <div className="block mb-4">
+          <span className="font-bold text-lg text-gray-700">Citizenship</span>
+          <p>{author.citizenship}</p>
+        </div>
+        <div />
+        <div className="block mb-4">
+          <span className="font-bold text-lg text-gray-700">Address</span>
+          <p>{author.address1}</p>
+          <p>{author.address2}</p>
+          <p>
+            {author.country} {author.postal}
+          </p>
+        </div>
+      </section>
+
+      <TitleWithEdit title="Executors" link="/2_executors" />
+
+      <TitleWithEdit
+        title="Beneficiaries and asset allocation"
+        link="/3_beneficiaries"
+      />
+
+      <TitleWithEdit title="Legal Guardians" link="/3_beneficiaries" />
+
+      <TitleWithEdit title="Funeral Instructions" link="/7_funeral" />
+
+      <TitleWithEdit title="Special Assets" link="/8_assets" />
+
+      <TitleWithEdit title="Special Instructions" link="/9_instructions" />
+
+      <section className="rounded bg-gray-100 px-8 py-8 my-4">
+        <div className="block mb-4">
           <span className="font-bold text-lg text-gray-700">Instructions</span>
           <p>{author.additionalInstructions}</p>
-        </label>
-      </div>
+        </div>
+      </section>
       <NavButtons prev="8_assets" />
     </>
   );
