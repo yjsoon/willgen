@@ -4,9 +4,10 @@ const FieldInputText = ({
   object,
   setObject,
   placeholder,
+  className,
 }) => {
   return (
-    <label className="block  mb-4" htmlFor={keyName}>
+    <label className={`block mb-4 ${className}`} htmlFor={keyName}>
       <span className="text-gray-700">{description}</span>
       <input
         type="text"

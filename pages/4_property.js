@@ -30,10 +30,6 @@ const Page4 = () => {
         You can choose to allocate your owned properties (if any) to your
         beneficiaries.
       </p>
-      <p>
-        This is only applicable for property under single ownership and may not
-        apply for other types of property ownership arrangements.
-      </p>
 
       {properties.map((property, index) => (
         <div key={index} className="relative">
