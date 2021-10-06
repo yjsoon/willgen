@@ -96,8 +96,43 @@ const Page10 = () => {
       <TitleWithEdit title="Legal Guardians" link="/3_beneficiaries" />
 
       <TitleWithEdit title="Funeral Instructions" link="/7_funeral" />
+      <div className="rounded divide-y divide-gray-300 bg-gray-100 px-8 py-8 my-4">
+        <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 items-start mb-4">
+          <label className="block  mb-4">
+            <span className="font-bold text-lg text-gray-700">Religion</span>
+            <p>{author.religion}</p>
+          </label>
+          <div></div>
+          <label className="block  mb-4">
+            <span className="font-bold text-lg text-gray-700">
+              Instructions
+            </span>
+            <p>{author.instructions}</p>
+          </label>
+        </section>
+      </div>
 
       <TitleWithEdit title="Special Assets" link="/8_assets" />
+      {assets.map((asset) => (
+        <section className="rounded bg-gray-100 px-8 py-8 my-4 grid grid-cols-2">
+          <div className="block mb-4">
+            <span className="font-bold text-lg text-gray-700">Asset Name</span>
+            <p>{asset.name}</p>
+          </div>
+          <div className="block mb-4">
+            <span className="font-bold text-lg text-gray-700">Category</span>
+            <p>{asset.category}</p>
+          </div>
+          <div className="block mb-4">
+            <span className="font-bold text-lg text-gray-700">Value</span>
+            <p>{asset.value}</p>
+          </div>
+          <div className="block mb-4">
+            <span className="font-bold text-lg text-gray-700">Description</span>
+            <p>{asset.description}</p>
+          </div>
+        </section>
+      ))}
 
       <TitleWithEdit title="Special Instructions" link="/9_instructions" />
 
