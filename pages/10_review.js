@@ -142,7 +142,11 @@ const Page10 = () => {
           <p>{author.additionalInstructions}</p>
         </div>
       </section>
-      <NavButtons prev="8_assets" />
+      <NavButtons
+        prev="8_assets"
+        next="generate-pdf"
+        nextLabel="Generate PDF"
+      />
     </>
   );
 };
